@@ -1,52 +1,35 @@
-# Alai Coding Challenge: TLDraw Timeline Implementation
+# TLDraw Timeline Component
 
-Welcome to the Alai Coding Challenge! This project is set up with React, TypeScript, and TLDraw.
+## Project Description
 
-## Challenge Overview
+This project implements a timeline component using TLDraw in React and TypeScript. The component allows users to input the number of timeline items they wish to generate. When the "Generate Timeline" button is clicked, the component dynamically creates and displays the specified number of timeline items within a responsive layout.
 
-Your task is to create a timeline component using TLDraw, similar to the one found on https://getalai.com/. You will also need to implement a user input feature to dynamically generate timeline elements.
+## Approach
 
-## Tasks
+1. **Component Structure:**
+   - Used React functional components with hooks (`useState`, `useEffect`, `useRef`) to manage component state and interact with the TLDraw editor.
+   - The `TldrawComponent` maintains the number of items to be displayed in the timeline and handles their generation.
 
-1. Create a timeline element using TLDraw similar to what you can see on https://getalai.com/
-   ![Timeline Example](./src/assets/timeline.png)
+2. **Timeline Generation:**
+   - **Dynamic Rendering:** The timeline items are positioned horizontally by default. If the number of items exceeds the horizontal space, they automatically wrap to the next line.
+   - **Editor Interaction:** Utilized TLDraw's API to create and position text shapes representing each timeline item. Implemented a `handleGenerate` function to clear existing shapes and add new ones based on user input.
 
-2. Add an input field where the user can enter desired number of items and a generate button. When the user clicks generate,
-   then the timeline element should show that many number of elements.
+3. **Styling:**
+   - Applied basic styling to position the timeline items and handle layout using inline styles.
+
+## Challenges Faced
+
+1. **Shape Management:**
+   - Ensuring the TLDraw editor correctly clears existing shapes before adding new ones. Needed to account for different methods provided by TLDraw for clearing shapes (`clear` or `reset`).
+
+2. **Dynamic Layout:**
+   - Implementing the logic for wrapping timeline items to the next line when they exceed the horizontal space. This required calculating the position of each item based on the total number of items and their dimensions.
+
+3. **Error Handling:**
+   - Addressed validation issues related to TLDraw's color constraints. Adjusted the color properties to match TLDraw's expected values to avoid validation errors.
 
 ## Getting Started
 
-1. Clone this repository
-2. Install dependencies:
-   ```
-   npm install
-   ```
-3. Run the development server:
-   ```
-   npm run dev
-   ```
-4. Open your browser and navigate to `http://localhost:5173` (or the port shown in your terminal)
-
-## Project Structure
-
-- `src/App.tsx`: Main application component
-- `src/TldrawComponent.tsx`: TLDraw canvas implementation (You'll likely need to modify this)
-
-## Evaluation Criteria
-
-- Feature completion: All required features are fully implemented and functional.
-- Code quality and organization
-- Proper use of React, TypeScript, and TLDraw
-
-## Submission
-
-Please create a private repo for your submission to avoid leaking the solution. Add our emails (krishna@getalai.com and anmol@getalai.com) when you're ready for review.
-Include a brief description of your approach and any challenges you faced.
-
-## Resources
-
-- [TLDraw Documentation](https://tldraw.dev/)
-- [React Documentation](https://reactjs.org/)
-- [TypeScript Documentation](https://www.typescriptlang.org/docs/)
-
-Good luck, and we look forward to seeing your implementation!
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/your-username/repository-name.git
