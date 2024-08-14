@@ -30,6 +30,9 @@ This project implements a timeline component using TLDraw in React and TypeScrip
 
 ## Getting Started
 
-1. **Clone the Repository:**
-   ```bash
-   git clone https://github.com/your-username/repository-name.git
+Clone this repository
+Install dependencies:
+npm install
+Run the development server:
+npm run dev
+Open your browser and navigate to http://localhost:5173 (or the port shown in your terminal)
